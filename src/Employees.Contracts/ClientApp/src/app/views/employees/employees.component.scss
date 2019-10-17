@@ -1,0 +1,26 @@
+.view-employees {
+  margin: 5px;
+  padding: 10px;
+
+  -webkit-box-shadow: 0px 2px 20px -6px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 2px 20px -6px rgba(0, 0, 0, 0.41);
+
+  .container-title {
+    margin: 20px 0 35px 0;
+
+    div {
+      font-size: 35px;
+      font-weight: 500;
+    }
+  }
+
+  .container-filter {
+    .form-group {
+      max-width: 500px;
+    }
+
+    .btn-filter {
+      margin: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="view-employees d-flex flex-column ">
+  <div class="container-title">
+    <div>EMPLOYEES</div>
+  </div>
+
+  <div class="container-filter d-flex flex-row">
+    <div class="form-group col">
+      <input type="text" [(ngModel)]="filter" class="form-control"  placeholder="Filter by Id">
+    </div>
+    <div class="btn-filter">
+      <button (click)="onFilter()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <div class="dropdown-divider">
+
+  </div>
+</div>
