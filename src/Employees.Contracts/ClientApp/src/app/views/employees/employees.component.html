@@ -5,7 +5,7 @@
 
   <div class="container-filter d-flex flex-row">
     <div class="form-group col">
-      <input type="text" maxlength="10" [formControl]="filter" class="form-control" placeholder="Filter by Id">
+      <input (keypress)="keyPress($event)" type="text" maxlength="10" [formControl]="filter" class="form-control" placeholder="Filter by Id">
       <div class="invalid-feedback" [ngStyle]="{'display': filter.invalid?'block': none}">
         Invalid format. Must be a number
       </div>

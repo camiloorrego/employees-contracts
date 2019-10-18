@@ -20,6 +20,13 @@ export class EmployeesComponent implements OnInit {
     this.loadEmployees(this.service.getEmployees());
   }
 
+  keyPress(event: any) {
+    // If enter is pressed
+    if (this.filter.valid && event.charCode === 13) {
+      this.onFilter();
+    }
+  }
+
   onFilter() {
     this.items = [];
     const method = this.filter.value ? this.service.getEmployeeById(this.filter.value) : this.service.getEmployees();
