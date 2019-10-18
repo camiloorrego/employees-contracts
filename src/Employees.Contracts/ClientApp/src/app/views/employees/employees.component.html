@@ -5,13 +5,47 @@
 
   <div class="container-filter d-flex flex-row">
     <div class="form-group col">
-      <input type="text" [(ngModel)]="filter" class="form-control"  placeholder="Filter by Id">
+      <input type="text" maxlength="10" [formControl]="filter" class="form-control" placeholder="Filter by Id">
+      <div class="invalid-feedback" [ngStyle]="{'display': filter.invalid?'block': none}">
+        Invalid format. Must be a number
+      </div>
     </div>
     <div class="btn-filter">
-      <button (click)="onFilter()" class="btn btn-primary">Search</button>
+      <button (click)="onFilter()" [disabled]="filter.invalid" class="btn btn-primary">
+          Search
+      </button>
     </div>
   </div>
-  <div class="dropdown-divider">
-
+  <div class="dropdown-divider"> </div>
+  <div class="container-table">
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Contract Type</th>
+          <th>Role</th>
+          <th>Hourly Salary</th>
+          <th>Monthly Salary</th>
+          <th>Total Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.contractTypeName }}</td>
+          <td>{{ item.roleName }}</td>
+          <td>{{ item.hourlySalary | currency: 'USD' : 'symbol' : '1.0-0'}}</td>
+          <td>{{ item.monthlySalary | currency: 'USD' : 'symbol' : '1.0-0'}}</td>
+          <td>{{ item.total | currency: 'USD' : 'symbol' : '1.0-0' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div [ngStyle]="{'display': hasItem === false ? '':'none' }" class="div-no-data">
+      <img class="img-no-data" src="../../../assets/img/search.svg" alt="">
+      <div class="text-no-data">No hay registros para mostrar.</div>
+    </div>
   </div>
+
 </div>

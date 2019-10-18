@@ -15,12 +15,36 @@
   }
 
   .container-filter {
+    height: 60px;
+
     .form-group {
       max-width: 500px;
     }
 
     .btn-filter {
       margin: 0 10px;
+    }
+  }
+
+  .container-table {
+    margin: 15px 0 25px 0;
+
+    .img-no-data {
+      height: 100px;
+      width: 100px;
+    }
+
+    .div-no-data {
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 70px;
+      width: 100%;
+    }
+
+    .text-no-data {
+      color: rgba(117, 117, 117, 0.87);
+      font-size: 16px;
+      margin-top: 20px;
     }
   }
 }
