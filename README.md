@@ -8,6 +8,7 @@ This project was generated with .Net Core 2.2 and Angular 7.2.0.
 ### Prerequisites
 
 Node.js with npm
+
 Visual Studio 2017
 
 ### Installation
